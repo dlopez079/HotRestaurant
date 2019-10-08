@@ -20,8 +20,8 @@
 </head>
 
 <body>
- <!-- Jumbotron -->
- <div class="jumbotron p-0">
+  <!-- Jumbotron -->
+  <div class="jumbotron p-0">
 
     <!-- Card image -->
     <div class="view overlay rounded-top">
@@ -30,10 +30,10 @@
         <div class="mask rgba-white-slight"></div>
       </a>
     </div>
-  
+
     <!-- Card content -->
     <div class="card-body text-center mb-3">
-  
+
       <!-- Title -->
       <h3 class="card-title h3 my-4"><strong>Hot Restaurant!</strong></h3>
       <!-- Text -->
@@ -41,62 +41,133 @@
       <!-- Button -->
       <a href="#" class="btn purple-gradient btn-rounded mb-4">Reservation</a>
       <a href="#" class="btn purple-gradient btn-rounded mb-4">View Table</a>
-  
-    </div>
-  
-        <!-- Reservation Page -->
-        <div class="card">
-          <div class="card-header">
-            Table Reservation
-          </div>
-          <div class="card-body">
-            <form role="form">
-              <div class="form-group">
-                <label for="reserve-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
-              </div>
-              <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
-              </div>
-              <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
-              </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
+
     </div>
 
-
-    <footer class="footer">
-      <div class="container">
-        <p>
-          <a href="/api/tables">API Table Link</a> |
-          <a href="/api/waitlist">API Wait List</a>
+    <!-- Reservation Page -->
+    <div class="card">
+      <div class="card-header">
+        Table Reservation
       </div>
-    </footer>
+      <div class="card-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="reserve-name">Name</label>
+            <input type="text" class="form-control" id="reserve-name">
+          </div>
+          <div class="form-group">
+            <label for="reserve-phone">Phone Number</label>
+            <input type="text" class="form-control" id="reserve-phone">
+          </div>
+          <div class="form-group">
+            <label for="reserve-email">Email</label>
+            <input type="text" class="form-control" id="reserve-email">
+          </div>
+          <div class="form-group">
+            <label for="reserve-unique-id">Unique ID</label>
+            <input type="text" class="form-control" id="reserve-unique-id">
+          </div>
+          <button type="submit" class="btn btn-primary submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="/api/tables">API Table Link</a> |
+        <a href="/api/waitlist">API Wait List</a>
+    </div>
+  </footer>
 
   </div>
+
+</body>
+<!-- Central Modal-->
+<div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Reservation Made</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Thank you for your reservation, we look forward to see you!</p>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">See you soon!</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+<!-- Central Modal Medium Danger -->
+<div class="modal fade" id="centralModalDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Uh,Oh!</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Sorry, our reservation are full, we will let you know if anyone cancels but for right now you will be waitlisted</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        
+        <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Thank you for your patience!</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Danger-->
 
 </body>
 
 </html>
 
+
+
+
+
+
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+ 
   // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
   // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
   // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
   // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-  $(".submit").on("click", function(event) {
+  $(".submit").on("click", function (event) {
     event.preventDefault();
 
     // Here we grab the form elements
@@ -115,11 +186,12 @@
     // depending on if a tables is available or not.
 
     $.post("/api/tables", newReservation,
-      function(data) {
+      function (data) {
 
         // If a table is available... tell user they are booked.
         if (data) {
-          alert("Yay! You are officially booked!");
+         alert("Herray!")
+
         }
 
         // If a table is available... tell user they on the waiting list.
