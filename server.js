@@ -12,6 +12,7 @@ app.use(express.json());
 
 //The tables array that we are pushing data into
 var tables = [];
+var waitlist = []
 
 //Sends the user to add.html
 app.get("/reserve", function(req, res) {
@@ -34,7 +35,7 @@ app.post("/api/reservation", function(req, res) {
   
     console.log(newReservation);
   
-    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+    newReservation.routeName = newReservation.customerName.replace(/\s+/g, "").toLowerCase();
 
     tables.push(newReservation);
   
@@ -44,7 +45,7 @@ app.post("/api/reservation", function(req, res) {
 app.get("/api/tables", function(req, res) {
 
     return res.json(tables);
-  });
+});
 
 // Starts the server to begin listening
 // =============================================================
