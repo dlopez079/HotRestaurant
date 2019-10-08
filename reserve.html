@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Reservation Page</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Reservation Page</title>
 
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
 
-</head>
+  </head>
 
-<body>
- <!-- Jumbotron -->
- <div class="jumbotron p-0">
+  <body>
+    <!-- Jumbotron -->
+    <div class="jumbotron p-0">
 
-    <!-- Card image -->
-    <div class="view overlay rounded-top">
-      <img src="./images/restuarant.jpg" class="img-fluid" alt="Sample image">
-      <a href="#">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-  
-    <!-- Card content -->
-    <div class="card-body text-center mb-3">
-  
-      <!-- Title -->
-      <h3 class="card-title h3 my-4"><strong>Hot Restaurant!</strong></h3>
-      <!-- Text -->
-      <p class="card-text py-2">Would you like to make a Reservation or View Your Existing Table Reservation?</p>
-      <!-- Button -->
-      <a href="#" class="btn purple-gradient btn-rounded mb-4">Reservation</a>
-      <a href="#" class="btn purple-gradient btn-rounded mb-4">View Table</a>
-  
-    </div>
-  
-        <!-- Reservation Page -->
-        <div class="card">
-          <div class="card-header">
-            Table Reservation
-          </div>
-          <div class="card-body">
-            <form role="form">
-              <div class="form-group">
-                <label for="reserve-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
-              </div>
-              <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
-              </div>
-              <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
-              </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
-            </form>
-          </div>
+      <!-- Card image -->
+      <div class="view overlay rounded-top">
+        <img src="./images/restuarant.jpg" class="img-fluid" alt="Sample image">
+        <a href="#">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <!-- Card content -->
+      <div class="card-body text-center mb-3">
+
+        <!-- Title -->
+        <h3 class="card-title h3 my-4"><strong>Hot Restaurant!</strong></h3>
+        <!-- Text -->
+        <p class="card-text py-2">Would you like to make a Reservation or View Your Existing Table Reservation?</p>
+        <!-- Button -->
+        <a href="/reserve" class="btn purple-gradient btn-rounded mb-4">Reservation</a>
+        <a href="/tables" class="btn purple-gradient btn-rounded mb-4">View Table</a>
+
+      </div>
+
+      <!-- Reservation Page -->
+      <div class="card">
+        <div class="card-header">
+          Table Reservation
+        </div>
+        <div class="card-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="reserve-name">Name</label>
+              <input type="text" class="form-control" id="reserve-name">
+            </div>
+            <div class="form-group">
+              <label for="reserve-phone">Phone Number</label>
+              <input type="text" class="form-control" id="reserve-phone">
+            </div>
+            <div class="form-group">
+              <label for="reserve-email">Email</label>
+              <input type="text" class="form-control" id="reserve-email">
+            </div>
+            <div class="form-group">
+              <label for="reserve-unique-id">Unique ID</label>
+              <input type="text" class="form-control" id="reserve-unique-id">
+            </div>
+            <button type="submit" class="btn btn-primary submit">Submit</button>
+          </form>
         </div>
       </div>
+    </div>
     </div>
 
 
@@ -83,9 +83,9 @@
       </div>
     </footer>
 
-  </div>
+    </div>
 
-</body>
+  </body>
 
 </html>
 
@@ -96,7 +96,7 @@
   // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
   // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-  $(".submit").on("click", function(event) {
+  $(".submit").on("click", function (event) {
     event.preventDefault();
 
     // Here we grab the form elements
