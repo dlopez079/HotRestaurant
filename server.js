@@ -26,7 +26,7 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// Create New Characters - takes in JSON input
+// Create New reservations - takes in JSON input
 app.post("/api/reservation", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
@@ -41,8 +41,13 @@ app.post("/api/reservation", function(req, res) {
     res.json(newReservation);
 });
 
+app.get("/api/tables", function(req, res) {
+
+    return res.json(tables);
+  });
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });
+});
